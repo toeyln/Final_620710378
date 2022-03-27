@@ -34,9 +34,9 @@ class _HomePageState extends State<HomePage> {
   void guess(String choice) {
     setState(() {
       if (quiz_list![count].choice_list[quiz_list![count].answer] == choice) {
-        message = "เก่งมาก";
+        message = "correct";
       } else {
-        message = "ตอบผิด ตอบใหม่สิ";
+        message = "incorrect";
       }
     });
     Timer timer = Timer(Duration(seconds: 2), () {
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
   Widget printGuess() {
     if (message.isEmpty) {
       return SizedBox(height: 20, width: 10);
-    } else if (message == "เก่งมาก") {
+    } else if (message == "correct") {
       return Text(message);
     } else {
       return Text(message);
